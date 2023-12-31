@@ -1,18 +1,18 @@
 {
-  // These tasks will run in order when initializing your CodeSandbox project.
-  "setupTasks": [
-    {
-      "name": "Install Dependencies",
-      "command": "yarn install"
+    "setupTasks": [
+        // Each command is an object that has a `name` and a `command`.
+        {
+            "name": "Install Dependencies",
+            "command": "yarn install" // The `command` needs to be changed depending on the type of file you want to run (Kotlin, Python, etc.) This `command` is what a NodeJS project uses.
+        }
+    ],
+    "tasks": {
+        // Each task (the `name` is the `key`) has a `name` (yes the name is the key of the entire object but is also in the object itself), and a `command`.
+        // Also, in each task/object, there is an option `runAtStart`, which its default value is `false`, where the task will run on start.
+        "start": {
+            "name": "start",
+            "command": "yarn start", // This also changes depending on the type of file you want to run.
+            "runAtStart": true // This'll always run at the start of loading this project.
+        }
     }
-  ],
-
-  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
-  "tasks": {
-    "start": {
-      "name": "start",
-      "command": "yarn start",
-      "runAtStart": true
-    }
-  }
 }
